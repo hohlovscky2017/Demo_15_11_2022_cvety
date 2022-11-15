@@ -89,6 +89,9 @@
     <Compile Include="User.cs">
       <DependentUpon>CvetyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\RegWindow.xaml.cs">
+      <DependentUpon>RegWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CvetyModel.Context.cs">
@@ -139,6 +142,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo_15_11_2022_cvety"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Автооризация" Height="400" Width="600">
     <Window.Background>
@@ -12,13 +13,18 @@
             <GradientStop Color="#FF5A8B14"/>
         </LinearGradientBrush>
     </Window.Background>
+    <Window.Resources>
+        <sys:String x:Key="logo">
+            pack://application:,,,/Resources/logo.png
+        </sys:String>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200" Grid.Column="1" Margin="50,50,0,0"/>
+            <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200" Grid.Column="1" Margin="50,50,0,0" Source="{Binding Mode=OneWay, Source={StaticResource logo}}"/>
             <TextBlock Text="Добро пожаловать в систему ООО «Цветы»" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Height="75" Width="200" TextAlignment="Center" FontFamily="Arial" FontSize="20" TextWrapping="Wrap" Foreground="#FFF30A0A" FontWeight="Bold"/>
         </Grid>
         <Grid Grid.Column="1">

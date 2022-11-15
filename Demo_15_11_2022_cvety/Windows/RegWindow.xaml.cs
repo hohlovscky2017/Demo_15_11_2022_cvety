@@ -19,14 +19,49 @@ namespace Demo_15_11_2022_cvety.Windows
     /// </summary>
     public partial class RegWindow : Window
     {
+        private cvetyEntities context = new cvetyEntities();
         public RegWindow()
         {
             InitializeComponent();
+            Role.ItemsSource = context.Role.Select(Role => Role.RoleName).ToList();
+
         }
 
         private void ButtonReg_Click(object sender, RoutedEventArgs e)
-        {
-
+        {            
+            using (var db = new cvetyEntities()) // записываем в переменную db подключение к базе данных
+            {
+                try
+                {
+                    string Password = "";
+                    if (TextBoxPassword.Text == TextBoxFirstPassword.Text)
+                    {
+                        Password = TextBoxFirstPassword.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Пароли не совпадают");                        
+                        return;
+                    }
+                    db.User.Add(new User() {
+                        UserSurname = TextBoxUserSurname.Text,
+                        UserName = TextBoxUserName.Text,
+                        UserPatronymic = TextBoxUserPatronymic.Text,
+                        UserLogin = TextBoxUsername.Text,
+                        UserPassword = Password,
+                        UserRole = Role.SelectedIndex + 1
+                    });
+                    db.SaveChanges();
+                    //int a = Role.SelectedIndex + 1;
+                    //MessageBox.Show(a.ToString());
+                    //MessageBox.Show("Добро пожаловать " + user.Role.RoleName + " " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка"); // вывод сообщение об ошибке и прерываем выполнение программы
+                    return; // прерываем выполнение программы
+                }
+            }
         }
     }
 }

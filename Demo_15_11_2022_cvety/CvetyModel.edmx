@@ -58,7 +58,7 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserSurname" Type="nvarchar" MaxLength="100" />
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
           <Property Name="UserPatronymic" Type="nvarchar" MaxLength="100" />

@@ -154,18 +154,18 @@
       <DependentUpon>CvetyModel.edmx</DependentUpon>
       <LastGenOutput>CvetyModel.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\picture.png" />
-    <None Include="Resources\logo.png" />
-    <None Include="Resources\А112Т4.jpg" />
-    <None Include="Resources\S432T5.jpg" />
-    <None Include="Resources\J532V5.jpg" />
-    <None Include="Resources\H542F5.jpg" />
-    <None Include="Resources\G843H5.jpg" />
-    <None Include="Resources\G432G6.jpg" />
-    <None Include="Resources\F325D4.jpg" />
-    <None Include="Resources\F256G6.jpg" />
-    <None Include="Resources\D325D4.jpg" />
-    <None Include="Resources\C346F5.jpg" />
+    <Resource Include="Resources\picture.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\А112Т4.jpg" />
+    <Resource Include="Resources\S432T5.jpg" />
+    <Resource Include="Resources\J532V5.jpg" />
+    <Resource Include="Resources\H542F5.jpg" />
+    <Resource Include="Resources\G843H5.jpg" />
+    <Resource Include="Resources\G432G6.jpg" />
+    <Resource Include="Resources\F325D4.jpg" />
+    <Resource Include="Resources\F256G6.jpg" />
+    <Resource Include="Resources\D325D4.jpg" />
+    <Resource Include="Resources\C346F5.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

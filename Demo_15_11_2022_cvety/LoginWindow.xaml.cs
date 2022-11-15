@@ -23,5 +23,10 @@ namespace Demo_15_11_2022_cvety
         {
             InitializeComponent();
         }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

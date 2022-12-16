@@ -51,10 +51,7 @@ namespace Demo_15_11_2022_cvety.Windows
                         UserPassword = Password,
                         UserRole = Role.SelectedIndex + 1
                     });
-                    db.SaveChanges();
-                    //int a = Role.SelectedIndex + 1;
-                    //MessageBox.Show(a.ToString());
-                    //MessageBox.Show("Добро пожаловать " + user.Role.RoleName + " " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic);
+                    db.SaveChanges();                    
                 }
                 catch (Exception)
                 {

@@ -29,10 +29,11 @@
         </Grid>
         <Grid Grid.Column="1">
             <TextBox x:Name="TextBoxUsername" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,125,0,0"/>
-            <TextBox x:Name="TextBoxPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,175,0,0"/>
-            <Button x:Name="ButtonLogin" Content="Вход" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,225,0,0" FontFamily="Arial" FontSize="16" Click="ButtonLogin_Click"></Button>
+            <PasswordBox x:Name="PasswordBoxPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,175,0,0"/>
+            <Button x:Name="ButtonLogin" Content="Вход" Height="30" Width="90" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="183,225,0,0" FontFamily="Arial" FontSize="16" Click="ButtonLogin_Click"></Button>
             <Label Content="Логин:" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" Width="63" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
             <Label Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.428,1.596" Height="30" Width="68" FontFamily="Arial" FontSize="14" FontWeight="Bold" Margin="0,175,0,0"/>
+            <Button x:Name="ButtonReg" Content="Регистрация" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="73,225,0,0" FontFamily="Arial" FontSize="16" Click="ButtonReg_Click"/>
         </Grid>
     </Grid>
 </Window>

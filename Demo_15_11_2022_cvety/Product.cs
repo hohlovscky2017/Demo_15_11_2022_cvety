@@ -30,7 +30,50 @@ namespace Demo_15_11_2022_cvety
         public Nullable<byte> ProductDiscountAmount { get; set; }
         public Nullable<int> ProductQuantityInStock { get; set; }
         public string ProductStatus { get; set; }
-    
+
+        public string ImgPath
+        {
+            get
+            {
+                return "/Resources/" + this.ProductArticleNumber + ".jpg";
+            }
+        }
+        public string FullProductName
+        {
+            get
+            {
+                return "Наименование товара: " + this.ProductName;
+            }
+        }
+        public string FullProductDescription
+        {
+            get
+            {
+                return "Описание товара: " + this.ProductDescription;
+            }
+        }
+        public string FullProductManufacturer
+        {
+            get
+            {
+                return "Производитель: " + this.ProductManufacturer;
+            }
+        }
+        public string FullProductCost
+        {
+            get
+            {
+                return "Цена: " + this.ProductCost;
+            }
+        }
+        public string FullProductQuantityInStock
+        {
+            get
+            {
+                return "На складе: " + this.ProductQuantityInStock;
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
     }

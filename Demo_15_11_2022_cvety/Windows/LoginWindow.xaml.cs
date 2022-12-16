@@ -26,7 +26,7 @@ namespace Demo_15_11_2022_cvety
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBoxUsername.Text) || string.IsNullOrEmpty(TextBoxPassword.Text)) // если поля textBox1 и textBox2, что соответствует логину и паролю, то выводим сообщение об ошибке
+            if (string.IsNullOrEmpty(TextBoxUsername.Text) || string.IsNullOrEmpty(PasswordBoxPassword.Password)) // если поля textBox1 и textBox2, что соответствует логину и паролю, то выводим сообщение об ошибке
             {
                 MessageBox.Show("Введите логин и пароль!"); // вывод сообщение об ошибке и прерываем выполнение программы
                 return; // прерываем выполнение программы
@@ -35,8 +35,11 @@ namespace Demo_15_11_2022_cvety
             {
                 try
                 {
-                    var user = db.User.AsNoTracking().FirstOrDefault(u => u.UserLogin == TextBoxUsername.Text && u.UserPassword == TextBoxPassword.Text);
+                    var user = db.User.AsNoTracking().FirstOrDefault(u => u.UserLogin == TextBoxUsername.Text && u.UserPassword == PasswordBoxPassword.Password);
                     MessageBox.Show("Добро пожаловать " + user.Role.RoleName + " " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
                 }
                 catch (Exception)
                 {
@@ -44,6 +47,13 @@ namespace Demo_15_11_2022_cvety
                     return; // прерываем выполнение программы
                 }      
             }
+        }
+
+        private void ButtonReg_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.RegWindow regWindow = new Windows.RegWindow();
+            regWindow.Show();
+            this.Close();
         }
     }
 }

@@ -34,9 +34,9 @@ namespace Demo_15_11_2022_cvety.Windows
                 try
                 {
                     string Password = "";
-                    if (TextBoxPassword.Text == TextBoxFirstPassword.Text)
+                    if (PasswordBoxPassword.Password == PasswordBoxFirstPassword.Password)
                     {
-                        Password = TextBoxFirstPassword.Text;
+                        Password = PasswordBoxFirstPassword.Password;
                     }
                     else
                     {
@@ -62,6 +62,13 @@ namespace Demo_15_11_2022_cvety.Windows
                     return; // прерываем выполнение программы
                 }
             }
+        }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

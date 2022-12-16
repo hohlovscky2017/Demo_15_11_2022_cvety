@@ -7,7 +7,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Регистрация нового пользователя
-        "  Height="400" Width="600">
+        "  Height="450" Width="600">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
             <GradientStop Color="#FFD4F7A2" Offset="1"/>
@@ -24,26 +24,31 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <Grid Grid.Column="0">
             <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="200" Grid.Column="1" Margin="50,50,0,0" Source="{Binding Mode=OneWay, Source={StaticResource logo}}"/>
             <TextBlock Text="Добро пожаловать в систему ООО «Цветы»" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Height="75" Width="200" TextAlignment="Center" FontFamily="Arial" FontSize="20" TextWrapping="Wrap" Foreground="#FFF30A0A" FontWeight="Bold"/>
         </Grid>
+        
         <Grid Grid.Column="1">
             <TextBox x:Name="TextBoxUserSurname" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,25,0,0"/>
             <TextBox x:Name="TextBoxUserName" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,75,0,0"/>
             <TextBox x:Name="TextBoxUserPatronymic" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,125,0,0"/>
             <TextBox x:Name="TextBoxUsername" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,175,0,0"/>
-            <TextBox x:Name="TextBoxPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,225,0,0"/>
-            <TextBox x:Name="TextBoxFirstPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,275,0,0"/>
-            <Button x:Name="ButtonReg" Content="Регистрация
-                    " Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="-113,332,309,0" FontFamily="Arial" FontSize="16" Click="ButtonReg_Click"></Button>
-            <Label Content="Логин:" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" Width="63" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
-            <Label Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.428,1.596" Height="30" Width="68" FontFamily="Arial" FontSize="14" FontWeight="Bold" Margin="0,225,0,0"/>
-            <Label Content="Отчество:" HorizontalAlignment="Left" Margin="-10,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" Width="78" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
-            <Label Content="Имя:" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" Width="50" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
-            <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="-10,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" Width="78" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
-            <Label Content="Повторите пароль:" HorizontalAlignment="Left" Margin="-75,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.427" Height="30" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            <PasswordBox x:Name="PasswordBoxPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,225,0,0"/>
+            <PasswordBox x:Name="PasswordBoxFirstPassword" Height="30" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="50,275,0,0"/>
+
+            <Label Content="Логин:" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Height="30" Width="63" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Пароль:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="68" FontFamily="Arial" FontSize="14" FontWeight="Bold" Margin="0,225,0,0"/>
+            <Label Content="Отчество:" HorizontalAlignment="Left" Margin="-10,125,0,0" VerticalAlignment="Top" Height="30" Width="78" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Имя:" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Height="30" Width="50" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Фамилия:" HorizontalAlignment="Left" Margin="-10,25,0,0" VerticalAlignment="Top" Height="30" Width="78" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            <Label Content="Повторите пароль:" HorizontalAlignment="Left" Margin="-75,275,0,0" VerticalAlignment="Top" Height="30" FontFamily="Arial" FontSize="14" FontWeight="Bold"/>
+            
             <ComboBox x:Name="Role" HorizontalAlignment="Center" Margin="50,325,0,0" VerticalAlignment="Top" Width="200" Height="30"/>
+            
+            <Button x:Name="ButtonReg" Content="Регистрация" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial" FontSize="16" Click="ButtonReg_Click" Margin="175,375,0,0"/>
+            <Button x:Name="ButtonLogin" Content="Окно входа" Height="30" Width="95" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial" FontSize="16" Click="ButtonLogin_Click" Margin="75,375,0,0"/>
         </Grid>
     </Grid>
 </Window>

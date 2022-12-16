@@ -35,9 +35,9 @@ namespace Demo_15_11_2022_cvety
             {
                 try
                 {
-                    var user = db.User.AsNoTracking().FirstOrDefault(u => u.UserLogin == TextBoxUsername.Text && u.UserPassword == PasswordBoxPassword.Password);
+                    User user = db.User.AsNoTracking().FirstOrDefault(u => u.UserLogin == TextBoxUsername.Text && u.UserPassword == PasswordBoxPassword.Password);
                     MessageBox.Show("Добро пожаловать " + user.Role.RoleName + " " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic);
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(user);
                     mainWindow.Show();
                     this.Close();
                 }

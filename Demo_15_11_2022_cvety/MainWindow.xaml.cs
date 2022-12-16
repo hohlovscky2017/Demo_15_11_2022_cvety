@@ -20,13 +20,15 @@ namespace Demo_15_11_2022_cvety
     public partial class MainWindow : Window
     {
         private cvetyEntities _context = new cvetyEntities();
-    
 
         public MainWindow()
         {
+        }
+
+        public MainWindow(User user)
+        {
             InitializeComponent();
             ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
-            
         }
     }
 }

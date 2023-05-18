@@ -6,14 +6,15 @@
         xmlns:local="clr-namespace:Demo_15_11_2022_cvety"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="860" Width="1440" HorizontalAlignment="Left" VerticalAlignment="Top" MinHeight="20" Left="0" Top="0">
+        Title="Главное окно" Height="860" Width="1440" HorizontalAlignment="Left" VerticalAlignment="Top" MinHeight="20" Left="0" Top="0">
     <Window.Resources>
         <sys:String x:Key="NullImage">
             pack://application:,,,/Resources/picture.png
         </sys:String>
     </Window.Resources>
     <Grid>
-        <ListView Grid.Row="1" x:Name="ListProduct" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top">
+        <Button x:Name="ButtonAddProduct" Content="Добавить товар" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial" FontSize="16" Margin="175,25,0,0" Click="ButtonAddProduct_Click"/>
+        <ListView Grid.Row="1" x:Name="ListProduct" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" MouseDoubleClick="ListProduct_MouseDoubleClick" Margin="0,55,0,25">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel>
@@ -23,7 +24,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="1" BorderBrush="Black">
+                    <Border BorderThickness="0" BorderBrush="Black">
                         <Grid Height="Auto">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>

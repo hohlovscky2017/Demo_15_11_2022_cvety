@@ -27,10 +27,9 @@ namespace Demo_15_11_2022_cvety
         public byte[] ProductPhoto { get; set; }
         public string ProductManufacturer { get; set; }
         public Nullable<decimal> ProductCost { get; set; }
-        public Nullable<byte> ProductDiscountAmount { get; set; }
+        public Nullable<int> ProductDiscountAmount { get; set; }
         public Nullable<int> ProductQuantityInStock { get; set; }
         public string ProductStatus { get; set; }
-
         public string ImgPath
         {
             get
@@ -73,7 +72,6 @@ namespace Demo_15_11_2022_cvety
                 return "На складе: " + this.ProductQuantityInStock;
             }
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
     }

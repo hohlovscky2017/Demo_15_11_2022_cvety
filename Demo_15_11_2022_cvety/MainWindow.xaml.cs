@@ -23,12 +23,35 @@ namespace Demo_15_11_2022_cvety
 
         public MainWindow()
         {
+            InitializeComponent();
+            ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
         }
 
         public MainWindow(User user)
         {
             InitializeComponent();
+            Refresh();
+        }
+        private void Refresh()
+        {
+            _context = null;
+            _context = new cvetyEntities();
             ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
+        }
+        private void ListProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string Key = ((Product)ListProduct.SelectedItem).ProductArticleNumber;
+
+            Windows.EditDeleteProductWindow editDeleteProductWindow = new Windows.EditDeleteProductWindow(Key);
+            editDeleteProductWindow.ShowDialog();
+            Refresh();
+        }
+
+        private void ButtonAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.AddProductWindow addProductWindow = new Windows.AddProductWindow();
+            addProductWindow.ShowDialog();
+            Refresh();
         }
     }
 }

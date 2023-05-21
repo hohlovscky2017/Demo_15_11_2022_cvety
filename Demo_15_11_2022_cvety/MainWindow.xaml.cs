@@ -20,16 +20,20 @@ namespace Demo_15_11_2022_cvety
     public partial class MainWindow : Window
     {
         private cvetyEntities _context = new cvetyEntities();
+        private User LoginUser;
+        private bool GuestUser;
 
         public MainWindow()
         {
             InitializeComponent();
             ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
         }
-
-        public MainWindow(User user)
+        public MainWindow(User user = null, bool guest = false)
         {
             InitializeComponent();
+            LoginUser = user;
+            GuestUser = guest;
+            ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
             Refresh();
         }
         private void Refresh()
@@ -40,18 +44,45 @@ namespace Demo_15_11_2022_cvety
         }
         private void ListProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            string Key = ((Product)ListProduct.SelectedItem).ProductArticleNumber;
-
-            Windows.EditDeleteProductWindow editDeleteProductWindow = new Windows.EditDeleteProductWindow(Key);
-            editDeleteProductWindow.ShowDialog();
-            Refresh();
+            if (LoginUser != null)
+            {
+                if (LoginUser.Role.RoleName == "Администратор")
+                {
+                    string Key = ((Product)ListProduct.SelectedItem).ProductArticleNumber;
+                    Windows.EditDeleteProductWindow editDeleteProductWindow = new Windows.EditDeleteProductWindow(Key);
+                    editDeleteProductWindow.ShowDialog();
+                    Refresh();
+                }
+                if (LoginUser.Role.RoleName == "Менеджер" || LoginUser.Role.RoleName == "Клиент")
+                {
+                    MessageBox.Show("У Вас недостаточно прав для выполнения этой операции.");
+                }
+            }
+            if (GuestUser == true)
+            {
+                MessageBox.Show("Вы зарегистрирована как гость. У Вас недостаточно прав для выполнения этой операции.");
+            }
         }
 
         private void ButtonAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            Windows.AddProductWindow addProductWindow = new Windows.AddProductWindow();
-            addProductWindow.ShowDialog();
-            Refresh();
+            if (LoginUser != null)
+            {
+                if (LoginUser.Role.RoleName == "Администратор")
+                {
+                    Windows.AddProductWindow addProductWindow = new Windows.AddProductWindow();
+                    addProductWindow.ShowDialog();
+                    Refresh();
+                }
+                if (LoginUser.Role.RoleName == "Менеджер" || LoginUser.Role.RoleName == "Клиент")
+                {
+                    MessageBox.Show("У Вас недостаточно прав для выполнения этой операции.");
+                }
+            }
+            if (GuestUser == true)
+            {
+                MessageBox.Show("Вы зарегистрирована как гость. У Вас недостаточно прав для выполнения этой операции.");
+            }
         }
     }
 }

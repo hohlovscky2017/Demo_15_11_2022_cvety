@@ -37,7 +37,7 @@ namespace Demo_15_11_2022_cvety
                 {
                     User user = db.User.AsNoTracking().FirstOrDefault(u => u.UserLogin == TextBoxUsername.Text && u.UserPassword == PasswordBoxPassword.Password);
                     MessageBox.Show("Добро пожаловать " + user.Role.RoleName + " " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic);
-                    MainWindow mainWindow = new MainWindow(user);
+                    MainWindow mainWindow = new MainWindow(user, false);
                     mainWindow.Show();
                     this.Close();
                 }
@@ -53,6 +53,14 @@ namespace Demo_15_11_2022_cvety
         {
             Windows.RegWindow regWindow = new Windows.RegWindow();
             regWindow.Show();
+            this.Close();
+        }
+
+        private void ButtonLoginGuest_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Добро пожаловать в систему в режиме гостя");
+            MainWindow mainWindow = new MainWindow(null, true);
+            mainWindow.Show();
             this.Close();
         }
     }

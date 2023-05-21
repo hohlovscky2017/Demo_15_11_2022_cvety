@@ -14,6 +14,8 @@
     </Window.Resources>
     <Grid>
         <Button x:Name="ButtonAddProduct" Content="Добавить товар" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Arial" FontSize="16" Margin="175,25,0,0" Click="ButtonAddProduct_Click"/>
+        <TextBlock x:Name="TextBlockUserInfo" HorizontalAlignment="Right" Margin="0,25,175,0" VerticalAlignment="Top" Height="25" Width="350" FontFamily="Arial" FontSize="16" FlowDirection="RightToLeft"/>
+        
         <ListView Grid.Row="1" x:Name="ListProduct" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top" MouseDoubleClick="ListProduct_MouseDoubleClick" Margin="0,55,0,25">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>

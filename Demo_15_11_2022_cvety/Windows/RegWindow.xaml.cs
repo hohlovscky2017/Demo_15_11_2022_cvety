@@ -43,7 +43,7 @@ namespace Demo_15_11_2022_cvety.Windows
                         MessageBox.Show("Пароли не совпадают");                        
                         return;
                     }
-                    db.User.Add(new User() {
+                    User user = db.User.Add(new User() {
                         UserSurname = TextBoxUserSurname.Text,
                         UserName = TextBoxUserName.Text,
                         UserPatronymic = TextBoxUserPatronymic.Text,
@@ -51,7 +51,8 @@ namespace Demo_15_11_2022_cvety.Windows
                         UserPassword = Password,
                         UserRole = Role.SelectedIndex + 1
                     });
-                    db.SaveChanges();                    
+                    db.SaveChanges();
+                    MessageBox.Show("Пользователь " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic + " успешно зарегистрирован в системе!");
                 }
                 catch (Exception)
                 {

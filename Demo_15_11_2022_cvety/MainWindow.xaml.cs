@@ -34,6 +34,14 @@ namespace Demo_15_11_2022_cvety
             LoginUser = user;
             GuestUser = guest;
             ListProduct.ItemsSource = _context.Product.OrderBy(product => product.ProductName).ToList();
+            if (GuestUser == true)
+            {
+                TextBlockUserInfo.Text = "Гость";
+            }
+            else
+            {
+                TextBlockUserInfo.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+            }
             Refresh();
         }
         private void Refresh()
